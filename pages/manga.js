@@ -32,7 +32,7 @@ const manga = ({ list }) => {
 export async function getServerSideProps(context) {
   //console.log(context);
   const res = await fetch(
-    process.env.HOST + "/api/list?url=" + context.query.url
+    process.env.VERCEL_URL + "/api/list?url=" + context.query.url
   );
   const list = await res.json();
   console.log(list);
