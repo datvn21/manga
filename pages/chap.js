@@ -9,7 +9,12 @@ const chap = ({ images }) => {
       className="h-screen overflow-y-hidden bg-slate-200 w-screen flex flex-row-reverse overflow-x-scroll"
     >
       {images.data?.map((im) => (
-        <img className="mx-1 h-screen w-auto" key={im} src={im} alt={im} />
+        <img
+          className="mx-1 md:h-screen h-auto w-screen md:w-auto"
+          key={im}
+          src={im}
+          alt={im}
+        />
       ))}
     </div>
   );
