@@ -2,15 +2,18 @@ import Link from "next/link";
 import React from "react";
 import { HorizontalScroll } from "../components/HorizontalScroll";
 const chap = ({ images }) => {
-  const scrollRef = HorizontalScroll();
+  if (window.innerWidth != undefined && window.innerWidth > 768) {
+    const scrollRef = HorizontalScroll();
+  }
+
   return (
     <div
       ref={scrollRef}
-      className="h-screen overflow-y-hidden bg-slate-200 w-screen flex flex-row-reverse overflow-x-scroll"
+      className="md:h-screen h-screen w-full md:overflow-y-hidden bg-slate-200 md:w-screen flex flex-col md:flex-row-reverse overflow-x-hidden md:overflow-x-scroll"
     >
       {images.data?.map((im) => (
         <img
-          className="mx-1 md:h-screen h-auto w-screen md:w-auto"
+          className="mx-1 h-screen w-full md:w-auto"
           key={im}
           src={im}
           alt={im}
@@ -21,8 +24,11 @@ const chap = ({ images }) => {
 };
 export const getServerSideProps = async (context) => {
   //console.log(context);
-  const res = await fetch(
+  /*const res = await fetch(
     "https://mangaka.vercel.app/api/chap?url=" + context.query.url
+  );*/
+  const res = await fetch(
+    "http://localhost:3000/api/chap?url=" + context.query.url
   );
   const images = await res.json();
   console.log(images);
