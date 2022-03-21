@@ -2,6 +2,7 @@ import { useRef, useEffect } from "react";
 
 export function HorizontalScroll() {
   const elRef = useRef();
+
   useEffect(() => {
     const el = elRef.current;
     if (el) {
@@ -9,7 +10,7 @@ export function HorizontalScroll() {
         if (e.deltaY == 0) return;
         e.preventDefault();
         el.scrollTo({
-          left: el.scrollLeft + -e.deltaY * 5,
+          left: el.scrollLeft + -e.deltaY * 10,
           behavior: "smooth",
         });
       };
