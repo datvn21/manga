@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { HorizontalScroll } from "../components/HorizontalScroll";
@@ -7,7 +8,7 @@ const chap = ({ images }) => {
   return (
     <div
       ref={scrollRef}
-      className="md:h-screen h-screen w-full md:overflow-y-hidden bg-slate-200 md:w-screen flex flex-col md:flex-row-reverse overflow-x-hidden md:overflow-x-scroll"
+      className="md:h-screen h-screen w-full md:overflow-y-hidden bg-slate-200 md:w-screen flex flex-col md:flex-row overflow-x-hidden md:overflow-x-scroll"
     >
       {images.data?.map((im) => (
         <img
