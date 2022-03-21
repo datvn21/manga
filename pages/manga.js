@@ -16,7 +16,7 @@ const manga = ({ list }) => {
       <div className="md:w-1/3 md:h-2/3 md:my-10 m-5 overflow-y-scroll rounded-xl flex flex-col  bg-blue-50">
         {list.list?.map((chap) => (
           <Link
-            href={`http://localhost:3000/chap?url=` + chap.chap}
+            href={`https://mangaka.vercel.app/chap?url=` + chap.chap}
             key={chap.name}
           >
             <a className="p-2 m-2 bg-blue-100 hover:bg-blue-200 font-bold text-gray-600 rounded-xl border-solid border-2 border-blue-200">
@@ -32,7 +32,7 @@ const manga = ({ list }) => {
 export async function getServerSideProps(context) {
   //console.log(context);
   const res = await fetch(
-    "http://localhost:3000/api/list?url=" + context.query.url
+    "https://mangaka.vercel.app/api/list?url=" + context.query.url
   );
   const list = await res.json();
   //console.log(list);
