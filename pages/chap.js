@@ -28,7 +28,7 @@ export const getServerSideProps = async (context) => {
     "https://mangaka.vercel.app/api/chap?url=" + context.query.url
   );*/
   const res = await fetch(
-    "https://mangaka.vercel.app/api/chap?url=" + context.query.url
+    "http://localhost:3000/api/chap?url=" + context.query.url
   );
   const images = await res.json();
   console.log(images);
