@@ -1,13 +1,17 @@
+import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 
 const manga = ({ list }) => {
   return (
     <div className="w-[full] h-full md:h-screen md:h-min-screen flex items-center md:flex-row flex-col">
+      <Head>
+        <title>{list.name + " | by datvn21"}</title>
+      </Head>
       <div className="bg-slate-100 p-3 rounded-xl md:w-2/3 flex justify-center items-center flex-col md:flex-row m-5">
         <img className="m-5 rounded-xl" alt={list.name} src={list.avatar} />
         <div className="h-full w-full m-2">
-          <h1 className="font-bold text-xl md:text-3xl text-gray-700 mb-3">
+          <h1 className="font-bold text-2xl md:text-3xl text-gray-700 mb-3">
             {list.name}
           </h1>
           <div className="max-h-[180px] overflow-y-scroll overflow-hidden w-full h-full">
