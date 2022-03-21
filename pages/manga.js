@@ -13,13 +13,13 @@ const manga = ({ list }) => {
           </div>
         </div>
       </div>
-      <div className="md:flex md:flex-col grid grid-cols-2 rounded-xl font-bold text-md text-gray-500 overflow-y-scroll overflow-hidden bg-slate-100 w:3/4 md:w-1/3 h-full m-5">
+      <div className="md:flex md:flex-col  grid grid-cols-2 justify-center items-center rounded-xl font-bold text-md text-gray-500 md:overflow-y-scroll overflow-hidden bg-slate-100 w-[90%]  md:w-1/3 h-full m-10">
         {list.list?.map((chap) => (
           <Link
             href={`https://mangaka.vercel.app/chap?url=` + chap.chap}
             key={chap.name}
           >
-            <a className="m-4 w-full md:w-[90%] p-2 h-[80%] md:h-[120%] bg-blue-50 border-2 border-solid border-blue-200 rounded-xl">
+            <a className="m-4 my-8 w-1/2 md:w-[90%] p-2 h-[80%] md:h-[120%] bg-blue-50 border-2 border-solid border-blue-200 rounded-xl">
               {chap.name}
             </a>
           </Link>

@@ -26,7 +26,7 @@ export default function Home() {
         />
         <button
           type="submit"
-          className="w-12 h-full font-bold text-white text-2xl bg-blue-300 rounded-r-2xl border-4 border-solid border-blue-300 "
+          className="w-12 h-full font-bold outline-none text-white text-2xl bg-blue-300 rounded-r-2xl border-4 border-solid border-blue-300 "
         >
           Go
         </button>
