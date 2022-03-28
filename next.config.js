@@ -1,8 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    domains: ["upload.wikimedia.org", "i.truyenvua.com", "tintruyen.net"],
+  async headers() {
+    return [
+      {
+        // This works, and returns appropriate Response headers:
+        source: "/(.*).jpg",
+        headers: [
+          {
+            key: "Host",
+            value: "nhanhtruyen.org",
+          },
+          {
+            key: "Referer",
+            value: "http://www.nettruyenmoi.com/",
+          },
+        ],
+      },
+    ];
   },
 };
 module.exports = nextConfig;
